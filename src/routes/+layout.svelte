@@ -7,8 +7,23 @@
 </script>
 
 <svelte:head>
-	<title>Portfolio</title>
-	<meta name="description" content="Developer portfolio" />
+	<title>Adepeju Orefejo — Software Engineer</title>
+	<meta name="description" content="Software engineer building thoughtful products. Based in Berlin." />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8" />
+
+	<!-- Open Graph -->
+	<meta property="og:site_name" content="Adepeju Orefejo" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="en_US" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@adepejuorefejo" />
+
+	<!-- Misc -->
+	<meta name="author" content="Adepeju Orefejo" />
+	<link rel="canonical" href="https://adepejuorefejo.com" />
 </svelte:head>
 
 

@@ -13,8 +13,40 @@ const safeHtml = $derived.by(() => {
 </script>
 
 <svelte:head>
-  <title>{data.post.title} — Portfolio</title>
+  <title>{data.post.title} — Adepeju Orefejo</title>
   <meta name="description" content={data.post.excerpt ?? data.post.title} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{data.post.title} — Adepeju Orefejo" />
+  <meta property="og:description" content={data.post.excerpt ?? data.post.title} />
+  <meta property="og:url" content="https://adepejuorefejo.com/blog/{data.post.slug?.current}" />
+  <meta property="og:type" content="article" />
+  {#if data.post.coverImage}
+    <meta property="og:image" content={urlFor(data.post.coverImage).width(1200).height(630).fit('crop').url()} />
+    <meta name="twitter:image" content={urlFor(data.post.coverImage).width(1200).height(630).fit('crop').url()} />
+  {/if}
+
+  <!-- Twitter -->
+  <meta name="twitter:title" content="{data.post.title} — Adepeju Orefejo" />
+  <meta name="twitter:description" content={data.post.excerpt ?? data.post.title} />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://adepejuorefejo.com/blog/{data.post.slug?.current}" />
+
+  <!-- JSON-LD -->
+  {@html `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": data.post.title,
+    "description": data.post.excerpt ?? "",
+    "datePublished": data.post.publishedAt,
+    "author": {
+      "@type": "Person",
+      "name": "Adepeju Orefejo",
+      "url": "https://adepejuorefejo.com"
+    },
+    "url": `https://adepejuorefejo.com/blog/${data.post.slug?.current}`
+  })}</script>`}
 </svelte:head>
 
 <article class="py-24 px-6">

@@ -6,8 +6,21 @@
 </script>
 
 <svelte:head>
-	<title>Projects — Portfolio</title>
-	<meta name="description" content="All my projects and work." />
+	<title>Projects — Adepeju Orefejo</title>
+	<meta name="description" content="A collection of projects I've built — full-stack apps, research, and open source work." />
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="Projects — Adepeju Orefejo" />
+	<meta property="og:description" content="A collection of projects I've built — full-stack apps, research, and open source work." />
+	<meta property="og:url" content="https://adepejuorefejo.com/projects" />
+	<meta property="og:type" content="website" />
+
+	<!-- Twitter -->
+	<meta name="twitter:title" content="Projects — Adepeju Orefejo" />
+	<meta name="twitter:description" content="A collection of projects I've built — full-stack apps, research, and open source work." />
+
+	<!-- Canonical -->
+	<link rel="canonical" href="https://adepejuorefejo.com/projects" />
 </svelte:head>
 
 <div class="py-24 px-6">

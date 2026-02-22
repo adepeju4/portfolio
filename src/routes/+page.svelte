@@ -9,8 +9,34 @@
 </script>
 
 <svelte:head>
-	<title>{data.author?.name ?? 'Portfolio'}</title>
-	<meta name="description" content={data.author?.bio ?? 'Developer portfolio'} />
+	<title>Adepeju Orefejo — Software Engineer</title>
+	<meta name="description" content={data.author?.bio ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="Adepeju Orefejo — Software Engineer" />
+	<meta property="og:description" content={data.author?.bio ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
+	<meta property="og:url" content="https://adepejuorefejo.com" />
+	<meta property="og:type" content="website" />
+
+	<!-- Twitter -->
+	<meta name="twitter:title" content="Adepeju Orefejo — Software Engineer" />
+	<meta name="twitter:description" content={data.author?.bio ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
+
+	<!-- Canonical -->
+	<link rel="canonical" href="https://adepejuorefejo.com" />
+
+	<!-- JSON-LD -->
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Adepeju Orefejo",
+		"url": "https://adepejuorefejo.com",
+		"jobTitle": "Software Engineer",
+		"sameAs": [
+			data.author?.socialLinks?.github ?? "https://github.com/adepeju4",
+			data.author?.socialLinks?.linkedin ?? ""
+		].filter(Boolean)
+	})}</script>`}
 </svelte:head>
 
 <Hero author={data.author} />
