@@ -19,7 +19,7 @@
 	let { author }: Props = $props();
 </script>
 
-<section class="min-h-screen flex flex-col justify-center px-6 pt-24 pb-16">
+<section class="flex flex-col justify-center px-6 pt-24 pb-16 md:min-h-screen">
 	<div class="mx-auto max-w-6xl w-full">
 
 		<!-- Top label row -->
@@ -29,7 +29,7 @@
 		</div>
 
 		<!-- Big name block -->
-		<div class="mb-8 md:mb-12">
+		<div class="mb-6 md:mb-12">
 			<h1 class="text-[clamp(2.8rem,10vw,8rem)] font-bold leading-[0.92] tracking-tight text-[var(--color-text)]">
 				{author?.name?.split(' ')[0] ?? 'Adepeju'}
 			</h1>
