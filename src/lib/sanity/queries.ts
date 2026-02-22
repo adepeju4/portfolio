@@ -67,6 +67,7 @@ export const authorQuery = defineQuery(`
     name,
     headline,
     bio,
+    "bioText": pt::text(bio),
     image,
     skills,
     socialLinks

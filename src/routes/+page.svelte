@@ -15,11 +15,11 @@
 
 <svelte:head>
 	<title>Adepeju Orefejo — Software Engineer</title>
-	<meta name="description" content={data.author?.bio ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
+	<meta name="description" content={data.author?.bioText ?? data.author?.headline ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
 
 	<!-- Open Graph -->
 	<meta property="og:title" content="Adepeju Orefejo — Software Engineer" />
-	<meta property="og:description" content={data.author?.bio ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
+	<meta property="og:description" content={data.author?.bioText ?? data.author?.headline ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
 	<meta property="og:url" content="https://adepejuorefejo.com" />
 	<meta property="og:type" content="website" />
 	{#if ogImage}
@@ -31,7 +31,7 @@
 
 	<!-- Twitter -->
 	<meta name="twitter:title" content="Adepeju Orefejo — Software Engineer" />
-	<meta name="twitter:description" content={data.author?.bio ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
+	<meta name="twitter:description" content={data.author?.bioText ?? data.author?.headline ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
 
 	<!-- Canonical -->
 	<link rel="canonical" href="https://adepejuorefejo.com" />
