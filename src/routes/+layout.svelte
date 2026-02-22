@@ -16,10 +16,14 @@
 	<meta property="og:site_name" content="Adepeju Orefejo" />
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="en_US" />
+	<meta property="og:image" content="https://adepejuorefejo.com/og.jpeg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:creator" content="@adepejuorefejo" />
+	<meta name="twitter:image" content="https://adepejuorefejo.com/og.jpeg" />
 
 	<!-- Misc -->
 	<meta name="author" content="Adepeju Orefejo" />
