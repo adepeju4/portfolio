@@ -4,34 +4,25 @@
 	import Contact from '$lib/components/Contact.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 	import ProjectGrid from '$lib/components/ProjectGrid.svelte';
-	import { urlFor } from '$lib/sanity/image';
 	import type { PageData } from './$types';
 	let { data }: { data: PageData } = $props();
 
-	const ogImage = data.author?.image
-		? urlFor(data.author.image).width(1200).height(630).fit('crop').url()
-		: null;
+	const desc = data.author?.bioText ?? data.author?.headline ?? 'Software engineer building thoughtful products. Based in Berlin.';
 </script>
 
 <svelte:head>
 	<title>Adepeju Orefejo — Software Engineer</title>
-	<meta name="description" content={data.author?.bioText ?? data.author?.headline ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
+	<meta name="description" content={desc} />
 
 	<!-- Open Graph -->
 	<meta property="og:title" content="Adepeju Orefejo — Software Engineer" />
-	<meta property="og:description" content={data.author?.bioText ?? data.author?.headline ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
+	<meta property="og:description" content={desc} />
 	<meta property="og:url" content="https://adepejuorefejo.com" />
 	<meta property="og:type" content="website" />
-	{#if ogImage}
-		<meta property="og:image" content={ogImage} />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta name="twitter:image" content={ogImage} />
-	{/if}
 
 	<!-- Twitter -->
 	<meta name="twitter:title" content="Adepeju Orefejo — Software Engineer" />
-	<meta name="twitter:description" content={data.author?.bioText ?? data.author?.headline ?? 'Software engineer building thoughtful products. Based in Berlin.'} />
+	<meta name="twitter:description" content={desc} />
 
 	<!-- Canonical -->
 	<link rel="canonical" href="https://adepejuorefejo.com" />
