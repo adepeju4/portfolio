@@ -8,7 +8,7 @@
 
 <svelte:head>
 	<title>Adepeju Orefejo — Software Engineer</title>
-	<meta name="description" content="Software engineer building thoughtful products. Based in Berlin." />
+	<meta name="description" content="Adepeju Orefejo — Software engineer building thoughtful full-stack products. Based in Berlin." />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta charset="utf-8" />
 
@@ -16,6 +16,7 @@
 	<meta property="og:site_name" content="Adepeju Orefejo" />
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="en_US" />
+	<meta property="og:description" content="Adepeju Orefejo — Software engineer building thoughtful full-stack products. Based in Berlin." />
 	<meta property="og:image" content="https://adepejuorefejo.com/og.jpeg" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
