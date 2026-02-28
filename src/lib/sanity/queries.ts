@@ -59,6 +59,23 @@ export const postBySlugQuery = defineQuery(`
   }
 `);
 
+// --- Talks ---
+
+export const talksQuery = defineQuery(`
+  *[_type == "talk"] | order(date desc) {
+    _id,
+    title,
+    event,
+    date,
+    description,
+    tags,
+    image,
+    slidesUrl,
+    recordingUrl,
+    featured
+  }
+`);
+
 // --- Author (for About / Contact section) ---
 
 export const authorQuery = defineQuery(`
