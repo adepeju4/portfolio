@@ -29,6 +29,7 @@
 	<!-- Misc -->
 	<meta name="author" content="Adepeju Orefejo" />
 	<link rel="canonical" href="https://adepejuorefejo.com" />
+	<link rel="icon" href="/favicon.ico" sizes="any" />
 	<link rel="icon" href="/favicon.png" sizes="48x48" type="image/png" />
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" href="/favicon-192x192.png" />
