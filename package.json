@@ -12,6 +12,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "typegen": "sanity typegen generate",
+    "format": "prettier --write .",
     "studio": "sanity dev"
   },
   "devDependencies": {
