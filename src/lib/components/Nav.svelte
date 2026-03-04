@@ -62,6 +62,11 @@
 			<a href="/blog" onclick={() => mobileOpen = false} class="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">writing</a>
 			<a href="/talks" onclick={() => mobileOpen = false} class="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">talks</a>
 			<a href="/#contact" onclick={() => mobileOpen = false} class="text-sm text-[var(--color-primary)]">say hi →</a>
+			<button
+				onclick={() => inverted = !inverted}
+				class="text-base w-8 h-8 flex items-center justify-center rounded-full border border-[var(--color-surface-border)] text-[var(--color-muted)] hover:text-[var(--color-text)] hover:border-[var(--color-muted)] transition-colors"
+				aria-label="Toggle negative mode"
+			>{inverted ? '◑' : '◐'}</button>
 		</div>
 	{/if}
 </header>
