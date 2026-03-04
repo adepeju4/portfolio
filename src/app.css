@@ -28,6 +28,28 @@
   --radius-card: 0.75rem;
 }
 
+/* Negative / invert mode */
+html.inverted {
+  filter: invert(1);
+  --color-primary: oklch(38% 0.22 180);
+  --color-primary-hover: oklch(33% 0.24 180);
+  --color-primary-light: oklch(6% 0.06 180);
+}
+
+html.inverted img,
+html.inverted video {
+  filter: invert(1);
+}
+
+html.inverted .prose code {
+  color: cyan;
+}
+
+html.inverted .prose pre code {
+  color: var(--color-primary);
+}
+
+
 /* Base styles */
 body {
   background-color: var(--color-surface);
@@ -85,7 +107,7 @@ body {
 
 .prose code {
   background: var(--color-primary-light);
-  color: var(--color-primary);
+  color: red;
   padding: 0.15rem 0.4rem;
   border-radius: 0.25rem;
   font-family: var(--font-mono);
@@ -104,6 +126,7 @@ body {
 .prose pre code {
   background: none;
   padding: 0;
+  color: var(--color-primary);
 }
 
 .prose ul,

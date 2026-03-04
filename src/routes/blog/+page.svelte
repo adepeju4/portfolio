@@ -35,7 +35,7 @@
 		</div>
 
 		{#if data.posts?.length > 0}
-			<div class="flex flex-col">
+			<div class="flex flex-col gap-6">
 				{#each data.posts as post (post._id)}
 					<BlogPostCard {post} />
 				{/each}

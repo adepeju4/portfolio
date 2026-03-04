@@ -27,7 +27,7 @@
 						<p class="text-xs tracking-widest uppercase text-[var(--color-muted)] mb-4">stack</p>
 						<div class="flex flex-wrap gap-2">
 							{#each author.skills as skill}
-								<span class="text-sm font-light px-3 py-1 rounded-full border border-[var(--color-surface-border)] text-[var(--color-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors cursor-default">
+								<span class="text-xs px-2 py-1 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] font-medium cursor-default">
 									{skill}
 								</span>
 							{/each}

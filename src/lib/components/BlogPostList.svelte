@@ -31,7 +31,7 @@
 				{/if}
 			</div>
 
-			<div class="flex flex-col">
+			<div class="flex flex-col gap-6">
 				{#each posts as post (post._id)}
 					<BlogPostCard {post} />
 				{/each}

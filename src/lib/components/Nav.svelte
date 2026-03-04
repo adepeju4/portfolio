@@ -1,6 +1,19 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { browser } from '$app/environment';
+
 	let mobileOpen = $state(false);
+	let inverted = $state(browser ? localStorage.getItem('inverted') === 'true' : false);
+
+	$effect(() => {
+		if (inverted) {
+			document.documentElement.classList.add('inverted');
+			localStorage.setItem('inverted', 'true');
+		} else {
+			document.documentElement.classList.remove('inverted');
+			localStorage.setItem('inverted', 'false');
+		}
+	});
 </script>
 
 <header class="fixed top-0 left-0 right-0 z-50 px-6 py-5 bg-[var(--color-surface)]/80 backdrop-blur-sm">
@@ -16,6 +29,11 @@
 			<a href="/blog" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors {page.url.pathname.startsWith('/blog') ? 'text-[var(--color-text)]' : ''}">writing</a>
 			<a href="/talks" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors {page.url.pathname.startsWith('/talks') ? 'text-[var(--color-text)]' : ''}">talks</a>
 			<a href="/#contact" class="text-sm text-[var(--color-primary)] hover:opacity-70 transition-opacity">say hi →</a>
+			<button
+				onclick={() => inverted = !inverted}
+				class="text-base w-8 h-8 flex items-center justify-center rounded-full border border-[var(--color-surface-border)] text-[var(--color-muted)] hover:text-[var(--color-text)] hover:border-[var(--color-muted)] transition-colors"
+				aria-label="Toggle negative mode"
+			>{inverted ? '◑' : '◐'}</button>
 		</nav>
 
 		<!-- Mobile hamburger -->
