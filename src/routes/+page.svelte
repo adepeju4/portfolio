@@ -7,7 +7,7 @@
 	import type { PageData } from './$types';
 	let { data }: { data: PageData } = $props();
 
-	const desc = data.author?.bioText ?? data.author?.headline ?? 'Software engineer building thoughtful products. Based in Berlin.';
+	const desc = $derived(data.author?.bioText ?? data.author?.headline ?? 'Software engineer building thoughtful products. Based in Berlin.');
 </script>
 
 <svelte:head>

@@ -25,7 +25,7 @@
 		<!-- Top label row -->
 		<div class="flex items-center justify-between mb-10 md:mb-16">
 			<span class="text-xs tracking-widest uppercase text-[var(--color-muted)]">software engineer</span>
-			<span class="text-xs tracking-widest uppercase text-[var(--color-muted)]">berlin, 2026</span>
+			<span class="text-xs tracking-widest uppercase text-[var(--color-muted)]">Berlin, Germany</span>
 		</div>
 
 		<!-- Big name block -->
