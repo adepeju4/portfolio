@@ -75,10 +75,10 @@
 									</svg>
 								</a>
 							{/if}
-							{#if author.socialLinks.twitter}
-								<a href={author.socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-										<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+							{#if author.socialLinks.email}
+								<a href="mailto:{author.socialLinks.email}" aria-label="Email" class="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
 									</svg>
 								</a>
 							{/if}

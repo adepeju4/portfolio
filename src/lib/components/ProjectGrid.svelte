@@ -23,7 +23,7 @@
 </script>
 
 <section id="projects" class="py-24 px-6 border-t border-[var(--color-surface-border)]">
-	<div class="mx-auto max-w-5xl">
+	<div class="mx-auto max-w-6xl">
 
 		<!-- Section label -->
 		<div class="flex items-center justify-between mb-10 md:mb-16">
