@@ -43,6 +43,6 @@
 
 <Hero author={data.author} />
 <About author={data.author} />
-<ProjectGrid projects={data.featuredProjects ?? []} showViewAll title="Featured Projects" />
+<ProjectGrid projects={data.featuredProjects ?? []} showViewAll title="selected work" />
 <BlogPostList posts={data.recentPosts ?? []} showViewAll title="Recent Writing" />
 <Contact author={data.author} />

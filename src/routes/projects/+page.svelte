@@ -23,8 +23,4 @@
 	<link rel="canonical" href="https://adepejuorefejo.com/projects" />
 </svelte:head>
 
-<div class="py-24 px-6">
-	<div class="mx-auto max-w-5xl">
-		<ProjectGrid projects={data.projects ?? []} title="All Projects" />
-	</div>
-</div>
+<ProjectGrid projects={data.projects ?? []} title="all projects" />

@@ -19,17 +19,99 @@ export const project = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "description",
-      title: "Description",
-      type: "text",
-      rows: 3,
-      validation: (rule) => rule.required().max(300),
+      name: "year",
+      title: "Year",
+      type: "string",
+      description: 'e.g. "2024" or "2023 – now"',
     }),
     defineField({
-      name: "image",
-      title: "Screenshot / Cover Image",
-      type: "image",
-      options: { hotspot: true },
+      name: "role",
+      title: "Role",
+      type: "string",
+      description: 'e.g. "Full-stack", "Design + Frontend", "Research"',
+    }),
+    defineField({
+      name: "description",
+      title: "Short description",
+      type: "text",
+      rows: 2,
+      description: "One-line tagline shown under the title.",
+      validation: (rule) => rule.required().max(200),
+    }),
+    defineField({
+      name: "summary",
+      title: "Rich summary",
+      type: "text",
+      rows: 8,
+      description:
+        "The longer story — what the project is, why it exists, the problem it solves, what makes it interesting. Plain text, paragraphs separated by blank lines.",
+      validation: (rule) => rule.max(2000),
+    }),
+    defineField({
+      name: "highlights",
+      title: "Highlights",
+      type: "array",
+      of: [{ type: "string" }],
+      description:
+        "Short bullet points — what you built, shipped, measured. Keep each under ~120 chars.",
+    }),
+    defineField({
+      name: "media",
+      title: "Media gallery",
+      type: "array",
+      description:
+        "Images and videos shown on the project detail page. Drag to reorder. Videos accept YouTube, Vimeo, or direct .mp4 URLs.",
+      of: [
+        {
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            {
+              name: "caption",
+              title: "Caption",
+              type: "string",
+            },
+            {
+              name: "alt",
+              title: "Alt text",
+              type: "string",
+            },
+          ],
+        },
+        {
+          type: "object",
+          name: "video",
+          title: "Video",
+          fields: [
+            {
+              name: "url",
+              title: "Video URL",
+              type: "url",
+              description: "YouTube, Vimeo, or direct .mp4 URL",
+              validation: (rule) => rule.required(),
+            },
+            {
+              name: "caption",
+              title: "Caption",
+              type: "string",
+            },
+          ],
+          preview: {
+            select: { title: "caption", subtitle: "url" },
+            prepare({ title, subtitle }) {
+              return { title: title || "Video", subtitle };
+            },
+          },
+        },
+      ],
+    }),
+    defineField({
+      name: "body",
+      title: "Case study (long form)",
+      type: "text",
+      rows: 20,
+      description:
+        "Full case study shown on the project detail page. Markdown supported — use ## headings, **bold**, `code`, lists, links, etc.",
     }),
     defineField({
       name: "tags",
@@ -70,7 +152,6 @@ export const project = defineType({
   preview: {
     select: {
       title: "title",
-      media: "image",
       subtitle: "description",
     },
   },

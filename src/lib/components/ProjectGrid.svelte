@@ -5,8 +5,12 @@
 		projects: Array<{
 			_id: string;
 			title: string;
+			slug?: { current?: string };
+			year?: string;
+			role?: string;
 			description: string;
-			image?: object;
+			summary?: string;
+			highlights?: string[];
 			tags?: string[];
 			liveUrl?: string;
 			repoUrl?: string;
@@ -15,15 +19,15 @@
 		title?: string;
 	}
 
-	let { projects, showViewAll = false, title = 'Projects' }: Props = $props();
+	let { projects, showViewAll = false, title = 'work' }: Props = $props();
 </script>
 
 <section id="projects" class="py-24 px-6 border-t border-[var(--color-surface-border)]">
-	<div class="mx-auto max-w-6xl">
+	<div class="mx-auto max-w-5xl">
 
 		<!-- Section label -->
-		<div class="flex items-center justify-between mb-10 md:mb-14">
-			<span class="text-xs tracking-widest uppercase text-[var(--color-muted)]">work</span>
+		<div class="flex items-center justify-between mb-10 md:mb-16">
+			<span class="text-xs tracking-widest uppercase text-[var(--color-muted)]">{title}</span>
 			{#if showViewAll}
 				<a href="/projects" class="text-sm text-[var(--color-primary)] hover:opacity-70 transition-opacity">
 					see all →
@@ -32,9 +36,9 @@
 		</div>
 
 		{#if projects.length > 0}
-			<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
-				{#each projects as project (project._id)}
-					<ProjectCard {project} />
+			<div class="flex flex-col">
+				{#each projects as project, i (project._id)}
+					<ProjectCard {project} index={i} />
 				{/each}
 			</div>
 		{:else}

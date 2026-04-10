@@ -7,8 +7,11 @@ export const projectsQuery = defineQuery(`
     _id,
     title,
     slug,
+    year,
+    role,
     description,
-    image,
+    summary,
+    highlights,
     tags,
     liveUrl,
     repoUrl,
@@ -22,8 +25,36 @@ export const featuredProjectsQuery = defineQuery(`
     _id,
     title,
     slug,
+    year,
+    role,
     description,
-    image,
+    summary,
+    highlights,
+    tags,
+    liveUrl,
+    repoUrl
+  }
+`);
+
+export const projectBySlugQuery = defineQuery(`
+  *[_type == "project" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    year,
+    role,
+    description,
+    summary,
+    highlights,
+    body,
+    media[]{
+      _type,
+      _key,
+      caption,
+      alt,
+      url,
+      asset
+    },
     tags,
     liveUrl,
     repoUrl
