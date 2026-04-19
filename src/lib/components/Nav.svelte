@@ -24,8 +24,8 @@
 
 		<!-- Desktop nav -->
 		<nav class="hidden md:flex items-center gap-10">
-			<a href="/#projects" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">work</a>
 			<a href="/#about" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">about</a>
+			<a href="/projects" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors">work</a>
 			<a href="/blog" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors {page.url.pathname.startsWith('/blog') ? 'text-[var(--color-text)]' : ''}">writing</a>
 			<a href="/talks" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors {page.url.pathname.startsWith('/talks') ? 'text-[var(--color-text)]' : ''}">talks</a>
 			<a href="/#contact" class="text-sm text-[var(--color-primary)] hover:opacity-70 transition-opacity">say hi →</a>

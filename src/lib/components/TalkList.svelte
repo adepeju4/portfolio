@@ -52,7 +52,7 @@
 				</h3>
 
 				{#if talk.description}
-					<p class="text-sm font-light text-[var(--color-muted)] leading-relaxed line-clamp-2">
+					<p class="text-sm font-light text-[var(--color-muted)] leading-relaxed">
 						{talk.description}
 					</p>
 				{/if}

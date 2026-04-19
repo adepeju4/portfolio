@@ -23,4 +23,5 @@
 	<link rel="canonical" href="https://adepejuorefejo.com/projects" />
 </svelte:head>
 
+
 <ProjectGrid projects={data.projects ?? []} title="all projects" />
