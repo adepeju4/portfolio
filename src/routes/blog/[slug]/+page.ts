@@ -1,6 +1,7 @@
 import { error } from "@sveltejs/kit";
 import { client } from "$lib/sanity/client";
 import { postBySlugQuery } from "$lib/sanity/queries";
+import { urlFor } from "$lib/sanity/image";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ params }) => {
@@ -10,5 +11,9 @@ export const load: PageLoad = async ({ params }) => {
     error(404, "Post not found");
   }
 
-  return { post };
+  const ogImage = post.coverImage
+    ? urlFor(post.coverImage).width(1200).height(630).fit("crop").url()
+    : undefined;
+
+  return { post, ogImage };
 };

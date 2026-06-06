@@ -21,10 +21,7 @@ const safeHtml = $derived.by(() => {
   <meta property="og:description" content={data.post.excerpt ?? data.post.title} />
   <meta property="og:url" content="https://adepejuorefejo.com/blog/{data.post.slug?.current}" />
   <meta property="og:type" content="article" />
-  {#if data.post.coverImage}
-    <meta property="og:image" content={urlFor(data.post.coverImage).width(1200).height(630).fit('crop').url()} />
-    <meta name="twitter:image" content={urlFor(data.post.coverImage).width(1200).height(630).fit('crop').url()} />
-  {/if}
+  <!-- og:image / twitter:image are set in +layout.svelte from page data (data.ogImage) -->
 
   <!-- Twitter -->
   <meta name="twitter:title" content="{data.post.title} — Adepeju Orefejo" />
