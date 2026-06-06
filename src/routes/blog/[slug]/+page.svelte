@@ -138,7 +138,7 @@ const safeHtml = $derived.by(() => {
 
     <!-- Body -->
     {#if data.post.body}
-      <div class="prose prose-lg max-w-none">
+      <div class="prose prose-lg prose-full max-w-none text-justify hyphens-auto">
   {@html safeHtml}
 </div>
     {/if}

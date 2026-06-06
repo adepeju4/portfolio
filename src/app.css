@@ -63,6 +63,11 @@ body {
   max-width: 65ch;
 }
 
+/* Blog body: span the full container width (matches the cover image) */
+.prose.prose-full {
+  max-width: none;
+}
+
 .prose h1,
 .prose h2,
 .prose h3,
