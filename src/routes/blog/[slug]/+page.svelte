@@ -1,15 +1,8 @@
 <script lang="ts">
   import { urlFor } from "$lib/sanity/image";
-  import PortableText from "$lib/components/PortableText.svelte";
   import { formatDate } from "$lib/utils/date";
-  import { marked } from "marked";
-  import DOMPurify from "isomorphic-dompurify";
 
-  let { data } = $props<{ data: { post?: { body?: string } } }>();
-
-const safeHtml = $derived.by(() => {
-    const body = data?.post?.body ?? ''
-    return DOMPurify.sanitize(marked.parse(body) as string)})
+  let { data } = $props();
 </script>
 
 <svelte:head>
@@ -134,10 +127,10 @@ const safeHtml = $derived.by(() => {
     {/if}
 
     <!-- Body -->
-    {#if data.post.body}
+    {#if data.bodyHtml}
       <div class="prose prose-lg prose-full max-w-none text-justify hyphens-auto">
-  {@html safeHtml}
-</div>
+        {@html data.bodyHtml}
+      </div>
     {/if}
   </div>
 </article>

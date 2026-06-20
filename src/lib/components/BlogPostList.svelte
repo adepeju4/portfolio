@@ -32,8 +32,8 @@
 			</div>
 
 			<div class="flex flex-col gap-6">
-				{#each posts as post (post._id)}
-					<BlogPostCard {post} />
+				{#each posts as post, i (post._id)}
+					<BlogPostCard {post} index={i} />
 				{/each}
 			</div>
 		</div>

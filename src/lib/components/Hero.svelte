@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { urlFor } from '$lib/sanity/image';
+	import { enter } from '$lib/actions/reveal';
 
 	interface Props {
 		author: {
@@ -23,23 +24,23 @@
 	<div class="mx-auto max-w-6xl w-full">
 
 		<!-- Top label row -->
-		<div class="flex items-center justify-between mb-10 md:mb-16">
+		<div use:enter={{ delay: 0.05 }} class="flex items-center justify-between mb-10 md:mb-16">
 			<span class="text-xs tracking-widest uppercase text-[var(--color-muted)]">software engineer</span>
 			<span class="text-xs tracking-widest uppercase text-[var(--color-muted)]">Berlin, Germany</span>
 		</div>
 
 		<!-- Big name block -->
 		<div class="mb-6 md:mb-12">
-			<h1 class="text-[clamp(2.8rem,10vw,8rem)] font-bold leading-[0.92] tracking-tight text-[var(--color-text)]">
+			<h1 use:enter={{ delay: 0.12, y: 16 }} class="text-[clamp(2.8rem,10vw,8rem)] font-bold leading-[0.92] tracking-tight text-[var(--color-text)]">
 				{author?.name?.split(' ')[0] ?? 'Adepeju'}
 			</h1>
-			<h1 class="text-[clamp(2.8rem,10vw,8rem)] font-bold leading-[0.92] tracking-tight text-[var(--color-primary)]">
+			<h1 use:enter={{ delay: 0.2, y: 16 }} class="text-[clamp(2.8rem,10vw,8rem)] font-bold leading-[0.92] tracking-tight text-[var(--color-primary)]">
 				{author?.name?.split(' ').slice(1).join(' ') ?? 'Orefejo'}
 			</h1>
 		</div>
 
 		<!-- Bottom row: mobile = stacked (image on top), desktop = side by side -->
-		<div class="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 md:gap-12 md:items-end">
+		<div use:enter={{ delay: 0.32 }} class="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 md:gap-12 md:items-end">
 			<div>
 				{#if author?.headline}
 					<p class="text-sm md:text-base text-[var(--color-muted)] leading-relaxed max-w-sm mb-6 md:mb-8">

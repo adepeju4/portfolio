@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { urlFor } from '$lib/sanity/image';
 	import { formatDateShort } from '$lib/utils/date';
+	import { reveal } from '$lib/actions/reveal';
 
 	interface Props {
 		post: {
@@ -13,12 +14,13 @@
 			publishedAt: string;
 			author?: { name: string; image?: object };
 		};
+		index?: number;
 	}
 
-	let { post }: Props = $props();
+	let { post, index = 0 }: Props = $props();
 </script>
 
-<article class="group flex flex-col gap-3 border-b border-[var(--color-surface-border)] pb-8">
+<article use:reveal={{ delay: (index % 5) * 0.05 }} class="group flex flex-col gap-3 border-b border-[var(--color-surface-border)] pb-8">
 	<div class="flex items-center gap-3">
 		<time class="text-xs text-[var(--color-muted)]">{formatDateShort(post.publishedAt)}</time>
 		{#if post.tags?.length}

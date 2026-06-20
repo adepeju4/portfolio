@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { reveal } from '$lib/actions/reveal';
+
 	interface Props {
 		project: {
 			_id: string;
@@ -27,7 +29,7 @@
 	);
 </script>
 
-<article class="group py-10 md:py-14 border-t border-[var(--color-surface-border)] first:border-t-0">
+<article use:reveal={{ delay: (index % 4) * 0.06 }} class="group py-10 md:py-14 border-t border-[var(--color-surface-border)] first:border-t-0">
 	<!-- Meta row: index · year · role -->
 	<div class="flex items-center gap-4 mb-6 text-xs tracking-widest uppercase text-[var(--color-muted)]">
 		<span class="text-[var(--color-text)] font-medium">{numberLabel}</span>

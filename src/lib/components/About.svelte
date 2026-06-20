@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { reveal } from '$lib/actions/reveal';
+
 	interface Props {
 		author: {
 			name?: string;
@@ -11,7 +13,7 @@
 </script>
 
 {#if author?.bio || author?.skills?.length}
-	<section id="about" class="py-16 md:py-24 px-6 border-t border-[var(--color-surface-border)]">
+	<section use:reveal id="about" class="py-16 md:py-24 px-6 border-t border-[var(--color-surface-border)]">
 		<div class="mx-auto max-w-6xl">
 
 			<!-- Bio + Stack -->

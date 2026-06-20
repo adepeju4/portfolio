@@ -41,10 +41,6 @@ html.inverted video {
   filter: invert(1);
 }
 
-html.inverted .prose code {
-  color: cyan;
-}
-
 html.inverted .prose pre code {
   color: var(--color-primary);
 }
@@ -109,12 +105,15 @@ body {
 }
 
 .prose code {
-  background: var(--color-primary-light);
-  color: red;
-  padding: 0.15rem 0.4rem;
-  border-radius: 0.25rem;
+  background: var(--color-surface-alt);
+  color: var(--color-primary);
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--color-surface-border);
   font-family: var(--font-mono);
-  font-size: 0.875em;
+  font-size: 0.85em;
+  font-weight: 400;
+  white-space: nowrap;
 }
 
 .prose pre {
@@ -130,6 +129,94 @@ body {
   background: none;
   padding: 0;
   color: var(--color-primary);
+}
+
+/* VSCode-style code window */
+.prose .code-window {
+  margin: 1.85rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 18px 40px -20px rgba(0, 0, 0, 0.65);
+}
+
+.prose .code-window__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.62rem 0.9rem;
+  background: #252526;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.prose .code-window__dots {
+  display: inline-flex;
+  gap: 0.45rem;
+}
+
+.prose .code-window__dots span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+}
+
+.prose .code-window__dots span:nth-child(1) {
+  background: #ff5f56;
+}
+.prose .code-window__dots span:nth-child(2) {
+  background: #ffbd2e;
+}
+.prose .code-window__dots span:nth-child(3) {
+  background: #27c93f;
+}
+
+.prose .code-window__name {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: #9da5b4;
+  margin-left: 0.15rem;
+}
+
+.prose .code-window__body {
+  overflow-x: auto;
+}
+
+.prose .code-window pre.shiki {
+  margin: 0;
+  padding: 1.05rem 1.15rem;
+  border: 0;
+  border-radius: 0;
+  background: #1e1e1e !important;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+/* Reset the generic prose-code styling inside the window */
+.prose .code-window code {
+  display: inline-block;
+  min-width: 100%;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  font-size: inherit;
+  white-space: pre;
+}
+
+/* Keep the snippet true VSCode-dark even when the page is inverted */
+html.inverted .prose .code-window {
+  filter: invert(1);
+}
+
+html.inverted .prose .code-window code {
+  color: inherit;
 }
 
 .prose ul,

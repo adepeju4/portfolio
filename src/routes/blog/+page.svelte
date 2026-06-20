@@ -32,12 +32,18 @@
 				writing.
 			</h1>
 			<p class="text-sm font-light text-[var(--color-muted)] mt-4">thoughts on engineering, systems, and things i find interesting.</p>
+			{#if data.preview}
+				<span class="inline-flex items-center gap-1.5 mt-4 text-xs tracking-widest uppercase text-[var(--color-primary)]">
+					<span class="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]"></span>
+					draft preview
+				</span>
+			{/if}
 		</div>
 
 		{#if data.posts?.length > 0}
 			<div class="flex flex-col gap-6">
-				{#each data.posts as post (post._id)}
-					<BlogPostCard {post} />
+				{#each data.posts as post, i (post._id)}
+					<BlogPostCard {post} index={i} />
 				{/each}
 			</div>
 		{:else}

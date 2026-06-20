@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { reveal } from '$lib/actions/reveal';
+
 	interface Props {
 		author: {
 			name?: string;
@@ -14,7 +16,7 @@
 	let { author }: Props = $props();
 </script>
 
-<section id="contact" class="py-24 px-6 border-t border-[var(--color-surface-border)]">
+<section use:reveal id="contact" class="py-24 px-6 border-t border-[var(--color-surface-border)]">
 	<div class="mx-auto max-w-6xl">
 
 		<p class="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--color-text)] leading-tight mb-8 md:mb-10">

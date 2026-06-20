@@ -64,7 +64,7 @@ export const projectBySlugQuery = defineQuery(`
 // --- Blog Posts ---
 
 export const postsQuery = defineQuery(`
-  *[_type == "post"] | order(publishedAt desc) {
+  *[_type == "post"] | order(coalesce(publishedAt, _updatedAt) desc) {
     _id,
     title,
     slug,
