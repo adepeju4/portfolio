@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
+
+	const digits = $derived(String(page.status ?? 404).split(''));
 </script>
 
 <svelte:head>
@@ -18,7 +20,7 @@
 		<!-- Big status code -->
 		<div class="mb-6 md:mb-12">
 			<p class="text-[clamp(5rem,20vw,14rem)] font-bold leading-[0.88] tracking-tight select-none">
-				<span class="text-[var(--color-text)]">4</span><span class="text-[var(--color-primary)]">0</span><span class="text-[var(--color-text)]">4</span>
+				{#each digits as d, i}<span class={i === 1 ? 'text-[var(--color-primary)]' : 'text-[var(--color-text)]'}>{d}</span>{/each}
 			</p>
 		</div>
 
@@ -43,7 +45,7 @@
 			<!-- Decorative code block -->
 			<div class="text-xs text-[var(--color-muted)] leading-relaxed opacity-40 select-none hidden md:block">
 				<p>$ curl https://adepejuorefejo.com{page.url.pathname}</p>
-				<p class="text-[var(--color-primary)] opacity-100">HTTP/2 404</p>
+				<p class="text-[var(--color-primary)] opacity-100">HTTP/2 {page.status}</p>
 				<p>content-type: text/html</p>
 				<p>&#x276F; not found</p>
 			</div>

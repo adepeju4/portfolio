@@ -1,13 +1,12 @@
 import { dev } from "$app/environment";
 import { client } from "$lib/sanity/client";
-import { getPreviewClient } from "$lib/sanity/client.server";
+import { previewClient } from "$lib/sanity/client.server";
 import { postsQuery } from "$lib/sanity/queries";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async () => {
-  const previewClient = dev ? getPreviewClient() : null;
-  const preview = !!previewClient;
-  const sanity = previewClient ?? client;
+  const preview = dev && !!previewClient;
+  const sanity = preview ? previewClient! : client;
   try {
     const posts = await sanity.fetch(postsQuery);
     return { posts: posts ?? [], preview };

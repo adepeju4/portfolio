@@ -7,7 +7,7 @@
 		post: {
 			_id: string;
 			title: string;
-			slug: { current: string };
+			slug?: { current?: string };
 			excerpt?: string;
 			coverImage?: object;
 			tags?: string[];
@@ -31,7 +31,12 @@
 	</div>
 
 	<h3 class="text-base font-light text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors leading-snug">
-		<a href="/blog/{post.slug.current}">{post.title}</a>
+		{#if post.slug?.current}
+			<a href="/blog/{post.slug.current}">{post.title}</a>
+		{:else}
+			{post.title}
+			<span class="text-xs text-[var(--color-muted)]">(no slug yet)</span>
+		{/if}
 	</h3>
 
 	{#if post.excerpt}
@@ -40,10 +45,12 @@
 		</p>
 	{/if}
 
-	<a
-		href="/blog/{post.slug.current}"
-		class="text-xs text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors mt-1"
-	>
-		read →
-	</a>
+	{#if post.slug?.current}
+		<a
+			href="/blog/{post.slug.current}"
+			class="text-xs text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors mt-1"
+		>
+			read →
+		</a>
+	{/if}
 </article>
